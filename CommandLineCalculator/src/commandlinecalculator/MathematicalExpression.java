@@ -5,6 +5,9 @@ import java.util.List;
 
 public class MathematicalExpression {
     private String rawInput;
+    private List<Integer> indexOfAllOpeningBrackets;
+    private List<Integer> indexOfAllClosingBrackets;
+    private boolean rawInputIsIllegal;
     
     public MathematicalExpression(String rawInput) {
         setRawInput(rawInput); 
