@@ -12,4 +12,9 @@ public class MathematicalExpression {
         this.rawInput = rawInput;
     }
     
+    
+    private String getRawInput() {
+        return rawInput;
+    }
+    
 }
