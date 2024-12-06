@@ -15,6 +15,7 @@ public class MathematicalExpression {
         setRawInput(rawInput);
         this.indexOfAllOpeningBrackets = indexOfAllOpeningBrackets();
         this.indexOfAllClosingBrackets = indexOfAllClosingBrackets();
+        this.rawInputIsIllegal = rawInputIsIllegal();
     }
 
     private void setRawInput(String rawInput) {
