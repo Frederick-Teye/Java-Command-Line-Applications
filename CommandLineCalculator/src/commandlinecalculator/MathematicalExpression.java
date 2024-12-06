@@ -35,4 +35,20 @@ public class MathematicalExpression {
         return indexOfAllOpeningBrackets;
     }
     
+    
+    private List<Integer> indexOfAllClosingBrackets() {
+        
+        String rawInput = getRawInput();
+        List<Integer> indexOfAllClosingBrackets = new ArrayList<>();
+        
+        for (int i=0; i < rawInput.length(); i++) {
+            
+            if (rawInput.charAt(i) == ')')
+                indexOfAllClosingBrackets.add(i);
+                
+        }
+        
+        return indexOfAllClosingBrackets;
+    }
+    
 }
