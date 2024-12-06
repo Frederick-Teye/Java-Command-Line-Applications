@@ -9,6 +9,9 @@ public class CommandLineCalculator {
         System.out.println("Enter mathematical expression: ");
         String userInput = scanner.nextLine().trim();
         
+        String mathExpressionWithoutWhiteSpace = userInput.replace(" ", "");
+        System.out.println(mathExpressionWithoutWhiteSpace);
+        
         
     }
     
