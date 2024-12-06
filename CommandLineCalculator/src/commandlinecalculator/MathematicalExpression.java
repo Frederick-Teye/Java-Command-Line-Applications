@@ -1,5 +1,6 @@
 package commandlinecalculator;
 
+import static java.lang.Character.isDigit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,6 +55,26 @@ public class MathematicalExpression {
         }
         
         return indexOfAllClosingBrackets;
+    }
+    
+    private boolean rawInputIsIllegal() {
+        boolean isIllegal = false;
+        
+        for (int i=0; i < this.rawInput.length(); i++) {
+            if (!(isDigit(this.rawInput.charAt(i))
+                    || this.rawInput.charAt(i) == '.'
+                    || this.rawInput.charAt(i) == '('
+                    || this.rawInput.charAt(i) == ')'
+                    || this.rawInput.charAt(i) == '*'
+                    || this.rawInput.charAt(i) == '/'
+                    || this.rawInput.charAt(i) == '+'
+                    || this.rawInput.charAt(i) == '-')) {
+                isIllegal = true;
+                break;
+            }
+        }
+        
+        return isIllegal;
     }
     
 }
