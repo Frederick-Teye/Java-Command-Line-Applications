@@ -148,6 +148,21 @@ public class MathematicalExpression {
         return mutedRawInput;
     }
 
+    /**
+     * Inserts multiplication signs between closed brackets and numbers in the
+     * mutated raw input string.
+     *
+     * This method iterates through the indices of all opening brackets and
+     * checks if there is a number immediately following a closing bracket. If
+     * there is no arithmetic operator (such as '*', '/', '+', or '-') between
+     * the closing bracket and the number, a multiplication sign ('*') is
+     * inserted. The method ensures that multiple multiplication signs are not
+     * added consecutively.
+     *
+     * @return String - The modified mutated raw input string with
+     * multiplication signs inserted where necessary. If no modifications are
+     * needed, the original string is returned.
+     */
     private String putMultiplicationSignBetweenClosedBracketsAndNumbers() {
         byte counter = 0;
         String mutedRawInput = this.firstMutedRawInput;
