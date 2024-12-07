@@ -155,7 +155,8 @@ public class MathematicalExpression {
                     || substring.endsWith("**")
                     || substring.endsWith("/")
                     || substring.endsWith("+")
-                    || substring.endsWith("-"))) {
+                    || substring.endsWith("-")
+                    || substring.endsWith("("))) {
 
                 mutatedRawInput = substring + "*" + mutatedRawInput.substring(getIndex);
                 counter++;
