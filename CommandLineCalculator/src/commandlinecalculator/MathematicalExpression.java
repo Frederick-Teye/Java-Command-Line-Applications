@@ -127,12 +127,12 @@ public class MathematicalExpression {
 
     private String putMultiplicationSignBetweenNumbersAndOpenBrackets() {
         byte counter = 0;
-        String mutedRawInput = this.rawInput;
+        String mutatedRawInput = this.rawInput;
 
         for (int i = 0; i < indexOfAllOpeningBrackets.size(); i++) {
 
             int getIndex = indexOfAllOpeningBrackets.get(i) + counter;
-            String substring = mutedRawInput.substring(0, getIndex);
+            String substring = mutatedRawInput.substring(0, getIndex);
 
             if (!(substring.endsWith("*")
                     || substring.endsWith("**")
@@ -140,12 +140,12 @@ public class MathematicalExpression {
                     || substring.endsWith("+")
                     || substring.endsWith("-"))) {
 
-                mutedRawInput = substring + "*" + mutedRawInput.substring(getIndex);
+                mutatedRawInput = substring + "*" + mutatedRawInput.substring(getIndex);
                 counter++;
             }
         }
 
-        return mutedRawInput;
+        return mutatedRawInput;
     }
 
     /**
