@@ -62,24 +62,24 @@ public class MathematicalExpression {
      * Finds the indices of all closing parentheses in the first muted raw input
      * string.
      *
-     * This method iterates through the `firstMutedRawInput` string and collects
-     * the indices of all closing parentheses (')') that are not the last
-     * character in the string. The indices are stored in a list, which is then
-     * returned.
+     * This method iterates through the `firstMutatedRawInput` string and
+     * collects the indices of all closing parentheses (')') that are not the
+     * last character in the string. The indices are stored in a list, which is
+     * then returned.
      *
      * @return List<Integer> - A list of integers representing the indices of
-     * all closing parentheses found in the `firstMutedRawInput` string. If no
+     * all closing parentheses found in the `firstMutatedRawInput` string. If no
      * closing parentheses are found, an empty list is returned.
      */
     private List<Integer> indexOfAllClosingBrackets() {
 
-        String firstMutedRawInput = this.firstMutatedRawInput;
+        String firstMutatedRawInput = this.firstMutatedRawInput;
         List<Integer> indexOfAllClosingBrackets = new ArrayList<>();
 
-        for (int i = 0; i < firstMutedRawInput.length(); i++) {
+        for (int i = 0; i < firstMutatedRawInput.length(); i++) {
 
-            if (firstMutedRawInput.charAt(i) == ')') {
-                if (!(i == firstMutedRawInput.length() - 1)) {
+            if (firstMutatedRawInput.charAt(i) == ')') {
+                if (!(i == firstMutatedRawInput.length() - 1)) {
                     indexOfAllClosingBrackets.add(i);
                 }
             }
