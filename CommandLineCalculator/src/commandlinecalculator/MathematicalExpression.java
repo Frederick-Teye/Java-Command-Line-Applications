@@ -11,6 +11,7 @@ public class MathematicalExpression {
     private List<Integer> indexOfAllClosingBrackets;
     private boolean rawInputIsIllegal;
     private String firstMutatedRawInput;
+    private String lastMutatedRawInput;
 
     public MathematicalExpression(String rawInput) {
         setRawInput(rawInput);
