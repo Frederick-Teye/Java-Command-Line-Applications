@@ -165,12 +165,12 @@ public class MathematicalExpression {
      */
     private String putMultiplicationSignBetweenClosedBracketsAndNumbers() {
         byte counter = 0;
-        String mutedRawInput = this.firstMutedRawInput;
+        String mutatedRawInput = this.firstMutedRawInput;
 
         for (int i = 0; i < indexOfAllOpeningBrackets.size(); i++) {
 
             int getIndex = indexOfAllOpeningBrackets.get(i) + counter;
-            String substring = mutedRawInput.substring(0, getIndex + 2);
+            String substring = mutatedRawInput.substring(0, getIndex + 2);
 
             if (!(substring.endsWith("*")
                     || substring.endsWith("**")
@@ -178,12 +178,12 @@ public class MathematicalExpression {
                     || substring.endsWith("+")
                     || substring.endsWith("-"))) {
 
-                mutedRawInput = mutedRawInput.substring(0, ++getIndex)
-                        + "*" + mutedRawInput.substring(++getIndex);
+                mutatedRawInput = mutatedRawInput.substring(0, ++getIndex)
+                        + "*" + mutatedRawInput.substring(++getIndex);
                 counter++;
             }
         }
 
-        return mutedRawInput;
+        return mutatedRawInput;
     }
 }
