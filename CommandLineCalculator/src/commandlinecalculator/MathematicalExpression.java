@@ -15,6 +15,7 @@ public class MathematicalExpression {
     public MathematicalExpression(String rawInput) {
         setRawInput(rawInput);
         this.indexOfAllOpeningBrackets = indexOfAllOpeningBrackets();
+        this.firstMutedRawInput = putMultiplicationSignBetweenNumbersAndOpenBrackets();
         this.indexOfAllClosingBrackets = indexOfAllClosingBrackets();
         this.rawInputIsIllegal = rawInputIsIllegal();
     }
