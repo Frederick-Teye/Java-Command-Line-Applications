@@ -147,4 +147,28 @@ public class MathematicalExpression {
 
         return mutedRawInput;
     }
+
+    private String putMultiplicationSignBetweenClosedBracketsAndNumbers() {
+        byte counter = 0;
+        String mutedRawInput = this.firstMutedRawInput;
+
+        for (int i = 0; i < indexOfAllOpeningBrackets.size(); i++) {
+
+            int getIndex = indexOfAllOpeningBrackets.get(i) + counter;
+            String substring = mutedRawInput.substring(0, getIndex + 2);
+
+            if (!(substring.endsWith("*")
+                    || substring.endsWith("**")
+                    || substring.endsWith("/")
+                    || substring.endsWith("+")
+                    || substring.endsWith("-"))) {
+
+                mutedRawInput = mutedRawInput.substring(0, ++getIndex)
+                        + "*" + mutedRawInput.substring(++getIndex);
+                counter++;
+            }
+        }
+
+        return mutedRawInput;
+    }
 }
