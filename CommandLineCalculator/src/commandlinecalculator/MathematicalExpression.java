@@ -36,7 +36,9 @@ public class MathematicalExpression {
         for (int i = 0; i < rawInput.length(); i++) {
 
             if (rawInput.charAt(i) == '(') {
-                indexOfAllOpeningBrackets.add(i);
+                if (i != 0) {
+                    indexOfAllOpeningBrackets.add(i);
+                }
             }
 
         }
