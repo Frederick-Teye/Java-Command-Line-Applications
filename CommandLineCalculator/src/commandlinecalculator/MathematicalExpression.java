@@ -125,6 +125,21 @@ public class MathematicalExpression {
         return isIllegal;
     }
 
+    /**
+     * Inserts multiplication signs between numbers and opening brackets in the
+     * raw input string.
+     *
+     * This method iterates through the indices of all opening brackets and
+     * checks if there is a number immediately preceding an opening bracket. If
+     * there is no arithmetic operator (such as '*', '/', '+', or '-') between
+     * the number and the opening bracket, a multiplication sign ('*') is
+     * inserted. The method ensures that multiple multiplication signs are not
+     * added consecutively.
+     *
+     * @return String - The modified raw input string with multiplication signs
+     * inserted where necessary. If no modifications are needed, the original
+     * string is returned.
+     */
     private String putMultiplicationSignBetweenNumbersAndOpenBrackets() {
         byte counter = 0;
         String mutatedRawInput = this.rawInput;
