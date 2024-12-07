@@ -19,6 +19,7 @@ public class MathematicalExpression {
         this.firstMutatedRawInput = putMultiplicationSignBetweenNumbersAndOpenBrackets();
         this.indexOfAllClosingBrackets = indexOfAllClosingBrackets();
         this.rawInputIsIllegal = rawInputIsIllegal();
+        this.lastMutatedRawInput = putMultiplicationSignBetweenClosedBracketsAndNumbers();
     }
 
     private void setRawInput(String rawInput) {
