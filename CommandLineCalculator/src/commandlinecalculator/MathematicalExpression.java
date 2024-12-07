@@ -28,6 +28,18 @@ public class MathematicalExpression {
         return rawInput;
     }
 
+    /**
+     * Finds the indices of all opening parentheses in the raw input string.
+     *
+     * This method retrieves the raw input string and iterates through it to
+     * collect the indices of all opening parentheses ('('). The method excludes
+     * the first character of the string from being added to the list of
+     * indices. The indices are stored in a list, which is then returned.
+     *
+     * @return List<Integer> - A list of integers representing the indices of
+     * all opening parentheses found in the raw input string. If no opening
+     * parentheses are found, an empty list is returned.
+     */
     private List<Integer> indexOfAllOpeningBrackets() {
 
         String rawInput = getRawInput();
