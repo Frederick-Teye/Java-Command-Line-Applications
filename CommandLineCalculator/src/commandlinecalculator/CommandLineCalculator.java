@@ -1,8 +1,9 @@
 package commandlinecalculator;
+
 import java.util.Scanner;
 
 public class CommandLineCalculator {
-
+    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
@@ -12,7 +13,10 @@ public class CommandLineCalculator {
         String mathExpressionWithoutWhiteSpace = userInput.replace(" ", "");
         System.out.println(mathExpressionWithoutWhiteSpace);
         
+        MathematicalExpression mathExpression = new 
+        MathematicalExpression(mathExpressionWithoutWhiteSpace);
         
+        System.out.println(mathExpression);
     }
     
 }
