@@ -184,9 +184,9 @@ public class MathematicalExpression {
         byte counter = 0;
         String mutatedRawInput = this.firstMutatedRawInput;
 
-        for (int i = 0; i < indexOfAllOpeningBrackets.size(); i++) {
+        for (int i = 0; i < indexOfAllClosingBrackets.size(); i++) {
 
-            int getIndex = indexOfAllOpeningBrackets.get(i) + counter;
+            int getIndex = indexOfAllClosingBrackets.get(i) + counter;
             String substring = mutatedRawInput.substring(0, getIndex + 2);
 
             if (!(substring.endsWith("*")
