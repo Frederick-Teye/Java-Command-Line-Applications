@@ -203,4 +203,10 @@ public class MathematicalExpression {
 
         return mutatedRawInput;
     }
+
+    @Override
+    public String toString() {
+        return "Refined Mathematical Expression: " + lastMutatedRawInput;
+    }
+
 }
