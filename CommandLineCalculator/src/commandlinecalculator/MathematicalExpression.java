@@ -204,6 +204,10 @@ public class MathematicalExpression {
         return mutatedRawInput;
     }
 
+    public boolean isRawInputIllegal() {
+        return this.rawInputIsIllegal;
+    }
+    
     @Override
     public String toString() {
         return "Refined Mathematical Expression: " + lastMutatedRawInput;
