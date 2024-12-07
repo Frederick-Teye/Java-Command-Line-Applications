@@ -94,4 +94,26 @@ public class MathematicalExpression {
         return isIllegal;
     }
 
+    private String putMultiplicationSignBetweenNumbersAndOpenBrackets() {
+        byte counter = 0;
+        String mutedRawInput = this.rawInput;
+
+        for (int i = 0; i < indexOfAllOpeningBrackets.size(); i++) {
+
+            int getIndex = indexOfAllOpeningBrackets.get(i) + counter;
+            String substring = mutedRawInput.substring(0, getIndex);
+
+            if (!(substring.endsWith("*")
+                    || substring.endsWith("**")
+                    || substring.endsWith("/")
+                    || substring.endsWith("+")
+                    || substring.endsWith("-"))) {
+
+                mutedRawInput = substring + "*" + mutedRawInput.substring(getIndex);
+                counter++;
+            }
+        }
+
+        return mutedRawInput;
+    }
 }
