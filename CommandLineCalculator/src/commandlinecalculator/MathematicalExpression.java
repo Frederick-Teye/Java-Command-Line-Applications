@@ -10,6 +10,7 @@ public class MathematicalExpression {
     private List<Integer> indexOfAllOpeningBrackets;
     private List<Integer> indexOfAllClosingBrackets;
     private boolean rawInputIsIllegal;
+    private String firstMutedRawInput;
 
     public MathematicalExpression(String rawInput) {
         setRawInput(rawInput);
