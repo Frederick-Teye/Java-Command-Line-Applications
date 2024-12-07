@@ -10,12 +10,12 @@ public class MathematicalExpression {
     private List<Integer> indexOfAllOpeningBrackets;
     private List<Integer> indexOfAllClosingBrackets;
     private boolean rawInputIsIllegal;
-    private String firstMutedRawInput;
+    private String firstMutatedRawInput;
 
     public MathematicalExpression(String rawInput) {
         setRawInput(rawInput);
         this.indexOfAllOpeningBrackets = indexOfAllOpeningBrackets();
-        this.firstMutedRawInput = putMultiplicationSignBetweenNumbersAndOpenBrackets();
+        this.firstMutatedRawInput = putMultiplicationSignBetweenNumbersAndOpenBrackets();
         this.indexOfAllClosingBrackets = indexOfAllClosingBrackets();
         this.rawInputIsIllegal = rawInputIsIllegal();
     }
@@ -73,7 +73,7 @@ public class MathematicalExpression {
      */
     private List<Integer> indexOfAllClosingBrackets() {
 
-        String firstMutedRawInput = this.firstMutedRawInput;
+        String firstMutedRawInput = this.firstMutatedRawInput;
         List<Integer> indexOfAllClosingBrackets = new ArrayList<>();
 
         for (int i = 0; i < firstMutedRawInput.length(); i++) {
@@ -165,7 +165,7 @@ public class MathematicalExpression {
      */
     private String putMultiplicationSignBetweenClosedBracketsAndNumbers() {
         byte counter = 0;
-        String mutatedRawInput = this.firstMutedRawInput;
+        String mutatedRawInput = this.firstMutatedRawInput;
 
         for (int i = 0; i < indexOfAllOpeningBrackets.size(); i++) {
 
