@@ -46,13 +46,15 @@ public class MathematicalExpression {
 
     private List<Integer> indexOfAllClosingBrackets() {
 
-        String rawInput = getRawInput();
+        String firstMutedRawInput = this.firstMutedRawInput;
         List<Integer> indexOfAllClosingBrackets = new ArrayList<>();
 
-        for (int i = 0; i < rawInput.length(); i++) {
+        for (int i = 0; i < firstMutedRawInput.length(); i++) {
 
-            if (rawInput.charAt(i) == ')') {
-                indexOfAllClosingBrackets.add(i);
+            if (firstMutedRawInput.charAt(i) == ')') {
+                if (!(i == firstMutedRawInput.length() - 1)) {
+                    indexOfAllClosingBrackets.add(i);
+                }
             }
 
         }
