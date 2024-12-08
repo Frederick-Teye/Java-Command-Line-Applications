@@ -22,13 +22,16 @@ public class MathematicalExpression {
         this.lastMutatedRawInput = putMultiplicationSignBetweenClosedBracketsAndNumbers();
     }
 
+
     private void setRawInput(String rawInput) {
         this.rawInput = rawInput;
     }
 
+
     private String getRawInput() {
         return rawInput;
     }
+
 
     /**
      * Finds the indices of all opening parentheses in the raw input string.
@@ -60,6 +63,7 @@ public class MathematicalExpression {
         return indexOfAllOpeningBrackets;
     }
 
+
     /**
      * Finds the indices of all closing parentheses in the first muted raw input
      * string.
@@ -90,6 +94,7 @@ public class MathematicalExpression {
 
         return indexOfAllClosingBrackets;
     }
+
 
     /**
      * Checks if the raw input string contains any illegal characters.
@@ -126,6 +131,7 @@ public class MathematicalExpression {
 
         return isIllegal;
     }
+
 
     /**
      * Inserts multiplication signs between numbers and opening brackets in the
@@ -166,6 +172,7 @@ public class MathematicalExpression {
         return mutatedRawInput;
     }
 
+
     /**
      * Inserts multiplication signs between closed brackets and numbers in the
      * mutated raw input string.
@@ -194,10 +201,11 @@ public class MathematicalExpression {
                     || substring.endsWith("**")
                     || substring.endsWith("/")
                     || substring.endsWith("+")
-                    || substring.endsWith("-"))) {
+                    || substring.endsWith("-")
+                    || substring.endsWith(")"))) {
 
                 mutatedRawInput = mutatedRawInput.substring(0, ++getIndex)
-                        + "*" + mutatedRawInput.substring(++getIndex);
+                        + "*" + mutatedRawInput.substring(getIndex);
                 counter++;
             }
         }
@@ -205,13 +213,16 @@ public class MathematicalExpression {
         return mutatedRawInput;
     }
 
+
     public boolean isRawInputIllegal() {
         return this.rawInputIsIllegal;
     }
-    
+
+
     @Override
     public String toString() {
         return "Refined Mathematical Expression: " + lastMutatedRawInput;
     }
+
 
 }
