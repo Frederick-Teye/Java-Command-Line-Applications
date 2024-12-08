@@ -27,4 +27,19 @@ public class EvaluateExpression {
     }
 
 
+    private int getItemAtIndexBeforeCurrentIndex(int indexValue, List<Integer> indexOfAllBrackets) {
+        int currentIndexValue = indexValue;
+        List<Integer> indexOfBrackets = indexOfAllBrackets;
+        int temporalIndex = 0;
+        
+        for (int i = 0; i < indexOfBrackets.size(); i++) {
+            if (indexOfBrackets.get(i) != currentIndexValue) {
+                temporalIndex = i;
+            }else if (indexOfBrackets.get(i) == currentIndexValue){
+                break;
+            }
+        }
+        
+        return indexOfBrackets.get(temporalIndex); 
+    }
 }
