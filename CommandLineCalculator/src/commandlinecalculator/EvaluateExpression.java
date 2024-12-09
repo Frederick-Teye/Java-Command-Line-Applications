@@ -98,17 +98,25 @@ public class EvaluateExpression {
     private String overseeEvaluation() {
         String temporalMathExpression = this.mathExpression;
         List<Integer> temporalIndexOfBrackets = new ArrayList<>(this.indexOfAllBracketsInMathExpression);
-        
+
         if (temporalIndexOfBrackets.isEmpty()) {
             if (numberOfMathOperatorsInString(temporalMathExpression) > 0) {
                 if (temporalMathExpression.contains("**")) {
                     int indexOfPowerOperator = temporalMathExpression.indexOf("**");
-                    int indexOfEndOfOperandOnTheRight = 
-                            indexOfEndOfOperandToTheRight(indexOfPowerOperator + 2, temporalMathExpression);
-                    int indexOfEndOfOperandOnTheLeft = 
-                            indexOfEndOfOperandToTheLeft(indexOfPowerOperator - 1, temporalMathExpression);
+                    int indexOfEndOfOperandOnTheRight
+                            = indexOfEndOfOperandToTheRight(indexOfPowerOperator + 2, temporalMathExpression);
+                    int indexOfEndOfOperandOnTheLeft
+                            = indexOfEndOfOperandToTheLeft(indexOfPowerOperator - 1, temporalMathExpression);
                 }
             }
         }
+    }
+
+
+    private String solveExponentialExpression(String leftOperand, String rightOperand) {
+        double base = Double.parseDouble(leftOperand);
+        double exponent = Double.parseDouble(rightOperand);
+        double result = Math.pow(base, exponent);
+        return Double.toString(result);
     }
 }
