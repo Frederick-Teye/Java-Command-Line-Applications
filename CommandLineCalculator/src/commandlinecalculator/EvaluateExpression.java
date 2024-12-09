@@ -31,15 +31,17 @@ public class EvaluateExpression {
         int currentIndexValue = value;
         List<Integer> indexOfBrackets = indexOfAllBracketsList;
         int temporalIndex = 0;
-        
+
         for (int i = 0; i < indexOfBrackets.size(); i++) {
             if (indexOfBrackets.get(i) != currentIndexValue) {
                 temporalIndex = i;
-            }else if (indexOfBrackets.get(i) == currentIndexValue){
+            } else if (indexOfBrackets.get(i) == currentIndexValue) {
                 break;
             }
         }
-        
-        return indexOfBrackets.get(temporalIndex); 
+
+        return indexOfBrackets.get(temporalIndex);
     }
+
+
 }
