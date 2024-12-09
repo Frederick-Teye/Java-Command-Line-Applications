@@ -62,4 +62,20 @@ public class EvaluateExpression {
     }
 
 
+    private int indexOfEndOfOperandToTheRight(int indexToStartSearchFrom, String mathExpression) {
+        int endOfOperandOnRight = 0;
+        for (int i = indexToStartSearchFrom; i < mathExpression.length(); i++) {
+            if (mathExpression.charAt(i) == '*'
+                    || mathExpression.charAt(i) == '/'
+                    || mathExpression.charAt(i) == '+'
+                    || mathExpression.charAt(i) == '-'
+                    || i == mathExpression.length() - 1) {
+                endOfOperandOnRight = i;
+                break;
+            }
+        }
+        return endOfOperandOnRight;
+    }
+
+
 }
