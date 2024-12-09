@@ -104,19 +104,25 @@ public class EvaluateExpression {
         if (temporalIndexOfBrackets.isEmpty()) {
             if (numberOfMathOperatorsInString(temporalMathExpression) > 0) {
                 if (temporalMathExpression.contains("**")) {
-                    int indexOfPowerOperator = temporalMathExpression.indexOf("**");
-                    int indexOfEndOfOperandOnTheRight
-                            = indexOfEndOfOperandToTheRight(indexOfPowerOperator + 2, temporalMathExpression);
-                    int indexOfEndOfOperandOnTheLeft
-                            = indexOfEndOfOperandToTheLeft(indexOfPowerOperator - 1, temporalMathExpression);
-                    String leftOperand
-                            = temporalMathExpression.substring(indexOfEndOfOperandOnTheLeft, indexOfPowerOperator);
-                    String rightOperand
-                            = temporalMathExpression.substring(indexOfPowerOperator + 2, indexOfEndOfOperandOnTheRight);
-                    temporalMathExpression = solveExponentialExpression(leftOperand, rightOperand);
+                    temporalMathExpression = extractLeftAndRightOprandsAndSolveExponentialExpression(temporalMathExpression);
                 }
             }
         }
+        return temporalMathExpression;
+    }
+
+
+    private String extractLeftAndRightOprandsAndSolveExponentialExpression(String temporalMathExpression) {
+        int indexOfPowerOperator = temporalMathExpression.indexOf("**");
+        int indexOfEndOfOperandOnTheRight
+                = indexOfEndOfOperandToTheRight(indexOfPowerOperator + 2, temporalMathExpression);
+        int indexOfEndOfOperandOnTheLeft
+                = indexOfEndOfOperandToTheLeft(indexOfPowerOperator - 1, temporalMathExpression);
+        String leftOperand
+                = temporalMathExpression.substring(indexOfEndOfOperandOnTheLeft, indexOfPowerOperator);
+        String rightOperand
+                = temporalMathExpression.substring(indexOfPowerOperator + 2, indexOfEndOfOperandOnTheRight);
+        temporalMathExpression = solveExponentialExpression(leftOperand, rightOperand);
         return temporalMathExpression;
     }
 
