@@ -88,6 +88,7 @@ public class EvaluateExpression {
                     || string.charAt(i) == '-'
                     || i == 0) {
                 endOfOperandOnTheLeft = i;
+                break;
             }
         }
         return endOfOperandOnTheLeft;
