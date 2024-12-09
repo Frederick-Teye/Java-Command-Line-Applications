@@ -6,9 +6,11 @@ import java.util.List;
 public class EvaluateExpression {
 
     private String mathExpression;
+    private List<Integer> indexOfAllBracketsInMathExpression;
 
     public EvaluateExpression(String mathExpression) {
         this.mathExpression = mathExpression;
+        this.indexOfAllBracketsInMathExpression = getBracketsInMathExpression();
     }
 
 
