@@ -129,4 +129,10 @@ public class EvaluateExpression {
     }
 
 
+    @Override
+    public String toString() {
+        return this.solution;
+    }
+
+
 }
