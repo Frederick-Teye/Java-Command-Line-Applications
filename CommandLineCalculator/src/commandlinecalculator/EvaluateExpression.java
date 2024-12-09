@@ -107,9 +107,15 @@ public class EvaluateExpression {
                             = indexOfEndOfOperandToTheRight(indexOfPowerOperator + 2, temporalMathExpression);
                     int indexOfEndOfOperandOnTheLeft
                             = indexOfEndOfOperandToTheLeft(indexOfPowerOperator - 1, temporalMathExpression);
+                    String leftOperand
+                            = temporalMathExpression.substring(indexOfEndOfOperandOnTheLeft, indexOfPowerOperator);
+                    String rightOperand
+                            = temporalMathExpression.substring(indexOfPowerOperator + 2, indexOfEndOfOperandOnTheRight);
+                    temporalMathExpression = solveExponentialExpression(leftOperand, rightOperand);
                 }
             }
         }
+        return temporalMathExpression;
     }
 
 
@@ -119,4 +125,6 @@ public class EvaluateExpression {
         double result = Math.pow(base, exponent);
         return Double.toString(result);
     }
+
+
 }
