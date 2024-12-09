@@ -7,6 +7,7 @@ public class EvaluateExpression {
 
     private String mathExpression;
     private List<Integer> indexOfAllBracketsInMathExpression;
+    private String solution;
 
     public EvaluateExpression(String mathExpression) {
         this.mathExpression = mathExpression;
