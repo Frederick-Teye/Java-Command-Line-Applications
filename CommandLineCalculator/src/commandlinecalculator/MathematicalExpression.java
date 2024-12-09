@@ -221,7 +221,7 @@ public class MathematicalExpression {
 
     @Override
     public String toString() {
-        return "Refined Mathematical Expression: " + lastMutatedRawInput;
+        return this.lastMutatedRawInput;
     }
 
 
