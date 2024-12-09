@@ -78,4 +78,20 @@ public class EvaluateExpression {
     }
 
 
+    private int indexOfEndOfOperandToTheLeft(int indexToStartSearchFrom, String string) {
+        int endOfOperandOnTheLeft = 0;
+
+        for (int i = indexToStartSearchFrom; i > -1; i--) {
+            if (string.charAt(i) == '*'
+                    || string.charAt(i) == '/'
+                    || string.charAt(i) == '+'
+                    || string.charAt(i) == '-'
+                    || i == 0) {
+                endOfOperandOnTheLeft = i;
+            }
+        }
+        return endOfOperandOnTheLeft;
+    }
+
+
 }
