@@ -104,7 +104,7 @@ public class EvaluateExpression {
         if (temporalIndexOfBrackets.isEmpty()) {
             if (numberOfMathOperatorsInString(temporalMathExpression) > 0) {
                 if (temporalMathExpression.contains("**")) {
-                    temporalMathExpression = extractLeftAndRightOprandsAndSolveExponentialExpression(temporalMathExpression);
+                    temporalMathExpression = extractLeftAndRightOperandsAndSolveExponentialExpression(temporalMathExpression);
                 }
             }
         }
@@ -112,7 +112,7 @@ public class EvaluateExpression {
     }
 
 
-    private String extractLeftAndRightOprandsAndSolveExponentialExpression(String temporalMathExpression) {
+    private String extractLeftAndRightOperandsAndSolveExponentialExpression(String temporalMathExpression) {
         int indexOfPowerOperator = temporalMathExpression.indexOf("**");
         int indexOfEndOfOperandOnTheRight
                 = indexOfEndOfOperandToTheRight(indexOfPowerOperator + 2, temporalMathExpression);
