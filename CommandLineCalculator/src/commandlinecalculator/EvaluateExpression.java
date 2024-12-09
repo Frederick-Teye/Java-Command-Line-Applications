@@ -46,4 +46,20 @@ public class EvaluateExpression {
     }
 
 
+    private int numberOfMathOperatorsInString(String stringArgument) {
+        int counter = 0;
+        for (int i = 0; i < stringArgument.length(); i++) {
+
+            if (stringArgument.charAt(i) == '*'
+                    || stringArgument.charAt(i) == '/'
+                    || stringArgument.charAt(i) == '+'
+                    || stringArgument.charAt(i) == '-') {
+                counter++;
+            }
+
+        }
+        return counter;
+    }
+
+
 }
