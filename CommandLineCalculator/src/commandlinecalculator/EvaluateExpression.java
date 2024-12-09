@@ -74,7 +74,7 @@ public class EvaluateExpression {
                 break;
             }
         }
-        return endOfOperandOnRight;
+        return ++endOfOperandOnRight;
     }
 
 
