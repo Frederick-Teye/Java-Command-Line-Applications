@@ -16,7 +16,11 @@ public class CommandLineCalculator {
         MathematicalExpression mathExpression = new 
         MathematicalExpression(mathExpressionWithoutWhiteSpace);
         
-        System.out.println(mathExpression);
+        String input = mathExpression.toString();
+        
+        EvaluateExpression solution;
+        solution = new EvaluateExpression(input);
+        System.out.println("soution of " + mathExpression + " = " + solution);
     }
     
 }
