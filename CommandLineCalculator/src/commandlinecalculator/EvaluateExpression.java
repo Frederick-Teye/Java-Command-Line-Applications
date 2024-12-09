@@ -12,6 +12,7 @@ public class EvaluateExpression {
     public EvaluateExpression(String mathExpression) {
         this.mathExpression = mathExpression;
         this.indexOfAllBracketsInMathExpression = getBracketsInMathExpression();
+        this.solution = overseeEvaluation();
     }
 
 
