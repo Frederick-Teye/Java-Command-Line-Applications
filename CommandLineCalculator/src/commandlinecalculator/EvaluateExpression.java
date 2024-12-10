@@ -111,6 +111,9 @@ public class EvaluateExpression {
                     } else if (temporalMathExpression.contains("*")) {
                         temporalMathExpression
                                 = extractLeftAndRightOperandsAndSolveMultiplicationExpression(temporalMathExpression);
+                    } else if (temporalMathExpression.contains("/")) {
+                        temporalMathExpression
+                                = extractLeftAndRightOperandsAndSolveDivisionExpression(temporalMathExpression);
                     }
                 }
             }
