@@ -122,6 +122,10 @@ public class EvaluateExpression {
                         temporalMathExpression
                                 = extractLeftAndRightOperandsAndSolveAdditionExpression(temporalMathExpression);
                         continue;
+                    } else if (temporalMathExpression.contains("-")) {
+                        temporalMathExpression
+                                = extractLeftAndRightOperandsAndSolveSubtractionExpression(temporalMathExpression);
+                        continue;
                     }
                 }
             }
