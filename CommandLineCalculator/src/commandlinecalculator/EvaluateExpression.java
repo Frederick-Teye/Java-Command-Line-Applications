@@ -164,8 +164,11 @@ public class EvaluateExpression {
                 = temporalMathExpression.substring(indexOfEndOfOperandOnTheLeft, --indexOfMultiplicationOperator);
         String rightOperand
                 = temporalMathExpression.substring(++indexOfMultiplicationOperator, indexOfEndOfOperandOnTheRight);
-        temporalMathExpression = solveMultiplicationExpression(leftOperand, rightOperand);
-        return temporalMathExpression;
+        String remainingLeftString = temporalMathExpression.substring(0, indexOfEndOfOperandOnTheLeft);
+        String remainingRightString = temporalMathExpression.substring(indexOfEndOfOperandOnTheRight, 
+                temporalMathExpression.length());
+        String resultOfMultiplicationExpression = solveMultiplicationExpression(leftOperand, rightOperand);
+        return remainingLeftString + resultOfMultiplicationExpression + remainingRightString;
     }
 
 
