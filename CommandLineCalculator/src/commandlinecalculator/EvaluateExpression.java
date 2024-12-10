@@ -102,16 +102,22 @@ public class EvaluateExpression {
         List<Integer> temporalIndexOfBrackets = new ArrayList<>(this.indexOfAllBracketsInMathExpression);
 
         while (!(temporalIndexOfBrackets.isEmpty() && numberOfMathOperatorsInString(temporalMathExpression) == 0)) {
+
             if (temporalIndexOfBrackets.isEmpty()) {
                 if (numberOfMathOperatorsInString(temporalMathExpression) > 0) {
                     if (temporalMathExpression.contains("**")) {
                         temporalMathExpression
                                 = extractLeftAndRightOperandsAndSolveExponentialExpression(temporalMathExpression);
+                    } else if (temporalMathExpression.contains("*")) {
+                        temporalMathExpression
+                                = extractLeftAndRightOperandsAndSolveMultiplicationExpression(temporalMathExpression);
                     }
                 }
             }
             temporalMathExpression = temporalMathExpression;
+
         }
+
         return temporalMathExpression;
     }
 
