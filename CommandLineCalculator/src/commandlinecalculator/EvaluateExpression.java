@@ -108,12 +108,15 @@ public class EvaluateExpression {
                     if (temporalMathExpression.contains("**")) {
                         temporalMathExpression
                                 = extractLeftAndRightOperandsAndSolveExponentialExpression(temporalMathExpression);
+                        continue;
                     } else if (temporalMathExpression.contains("*")) {
                         temporalMathExpression
                                 = extractLeftAndRightOperandsAndSolveMultiplicationExpression(temporalMathExpression);
+                        continue;
                     } else if (temporalMathExpression.contains("/")) {
                         temporalMathExpression
                                 = extractLeftAndRightOperandsAndSolveDivisionExpression(temporalMathExpression);
+                        continue;
                     }
                 }
             }
