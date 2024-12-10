@@ -241,6 +241,24 @@ public class EvaluateExpression {
     }
 
 
+    private String extractLeftAndRightOperandsAndSolveSubtractionExpression(String temporalMathExpression) {
+        int indexOfSubtractionOperator = temporalMathExpression.indexOf("-");
+        int indexOfEndOfOperandOnTheRight
+                = indexOfEndOfOperandToTheRight(++indexOfSubtractionOperator, temporalMathExpression);
+        int indexOfEndOfOperandOnTheLeft
+                = indexOfEndOfOperandToTheLeft(indexOfSubtractionOperator - 2, temporalMathExpression);
+        String leftOperand
+                = temporalMathExpression.substring(indexOfEndOfOperandOnTheLeft, --indexOfSubtractionOperator);
+        String rightOperand
+                = temporalMathExpression.substring(++indexOfSubtractionOperator, indexOfEndOfOperandOnTheRight);
+        String remainingLeftString = temporalMathExpression.substring(0, indexOfEndOfOperandOnTheLeft);
+        String remainingRightString = temporalMathExpression.substring(indexOfEndOfOperandOnTheRight,
+                temporalMathExpression.length());
+        String resultOfSubtractionExpression = solveSubtractionExpression(leftOperand, rightOperand);
+        return remainingLeftString + resultOfSubtractionExpression + remainingRightString;
+    }
+
+
     @Override
     public String toString() {
         return this.solution;
