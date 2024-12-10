@@ -145,6 +145,21 @@ public class EvaluateExpression {
     }
 
 
+    private String extractLeftAndRightOperandsAndSolveMultiplicationExpression(String temporalMathExpression) {
+        int indexOfMultiplicationOperator = temporalMathExpression.indexOf("*");
+        int indexOfEndOfOperandOnTheRight
+                = indexOfEndOfOperandToTheRight(++indexOfMultiplicationOperator, temporalMathExpression);
+        int indexOfEndOfOperandOnTheLeft
+                = indexOfEndOfOperandToTheLeft(indexOfMultiplicationOperator - 2, temporalMathExpression);
+        String leftOperand
+                = temporalMathExpression.substring(indexOfEndOfOperandOnTheLeft, --indexOfMultiplicationOperator);
+        String rightOperand
+                = temporalMathExpression.substring(++indexOfMultiplicationOperator, indexOfEndOfOperandOnTheRight);
+        temporalMathExpression = solveMultiplicationExpression(leftOperand, rightOperand);
+        return temporalMathExpression;
+    }
+
+
     @Override
     public String toString() {
         return this.solution;
