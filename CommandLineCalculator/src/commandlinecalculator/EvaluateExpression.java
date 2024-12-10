@@ -171,6 +171,21 @@ public class EvaluateExpression {
     }
 
 
+    private String extractLeftAndRightOperandsAndSolveDivisionExpression(String temporalMathExpression) {
+        int indexOfDivisionOperator = temporalMathExpression.indexOf("/");
+        int indexOfEndOfOperandOnTheRight
+                = indexOfEndOfOperandToTheRight(++indexOfDivisionOperator, temporalMathExpression);
+        int indexOfEndOfOperandOnTheLeft
+                = indexOfEndOfOperandToTheLeft(indexOfDivisionOperator - 2, temporalMathExpression);
+        String leftOperand
+                = temporalMathExpression.substring(indexOfEndOfOperandOnTheLeft, --indexOfDivisionOperator);
+        String rightOperand
+                = temporalMathExpression.substring(++indexOfDivisionOperator, indexOfEndOfOperandOnTheRight);
+        temporalMathExpression = solveDivisionExpression(leftOperand, rightOperand);
+        return temporalMathExpression;
+    }
+
+
     @Override
     public String toString() {
         return this.solution;
