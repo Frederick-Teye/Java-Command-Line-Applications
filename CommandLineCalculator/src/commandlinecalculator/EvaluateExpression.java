@@ -186,6 +186,14 @@ public class EvaluateExpression {
     }
 
 
+    private String solveDivisionExpression(String leftOperand, String rightOperand) {
+        double leftOperandCasted = Double.parseDouble(leftOperand);
+        double rightOperandCasted = Double.parseDouble(rightOperand);
+        double result = leftOperandCasted / rightOperandCasted;
+        return Double.toString(result);
+    }
+
+
     @Override
     public String toString() {
         return this.solution;
