@@ -139,7 +139,7 @@ public class EvaluateExpression {
         String rightOperand
                 = temporalMathExpression.substring(indexOfPowerOperator + 2, indexOfEndOfOperandOnTheRight);
         String remainingLeftString = temporalMathExpression.substring(0, indexOfEndOfOperandOnTheLeft);
-        String remainingRightString = temporalMathExpression.substring(indexOfEndOfOperandOnTheRight, 
+        String remainingRightString = temporalMathExpression.substring(indexOfEndOfOperandOnTheRight,
                 temporalMathExpression.length());
         String resultOfExponentialExpression = solveExponentialExpression(leftOperand, rightOperand);
         return remainingLeftString + resultOfExponentialExpression + remainingRightString;
@@ -165,7 +165,7 @@ public class EvaluateExpression {
         String rightOperand
                 = temporalMathExpression.substring(++indexOfMultiplicationOperator, indexOfEndOfOperandOnTheRight);
         String remainingLeftString = temporalMathExpression.substring(0, indexOfEndOfOperandOnTheLeft);
-        String remainingRightString = temporalMathExpression.substring(indexOfEndOfOperandOnTheRight, 
+        String remainingRightString = temporalMathExpression.substring(indexOfEndOfOperandOnTheRight,
                 temporalMathExpression.length());
         String resultOfMultiplicationExpression = solveMultiplicationExpression(leftOperand, rightOperand);
         return remainingLeftString + resultOfMultiplicationExpression + remainingRightString;
@@ -190,8 +190,11 @@ public class EvaluateExpression {
                 = temporalMathExpression.substring(indexOfEndOfOperandOnTheLeft, --indexOfDivisionOperator);
         String rightOperand
                 = temporalMathExpression.substring(++indexOfDivisionOperator, indexOfEndOfOperandOnTheRight);
-        temporalMathExpression = solveDivisionExpression(leftOperand, rightOperand);
-        return temporalMathExpression;
+        String remainingLeftString = temporalMathExpression.substring(0, indexOfEndOfOperandOnTheLeft);
+        String remainingRightString = temporalMathExpression.substring(indexOfEndOfOperandOnTheRight,
+                temporalMathExpression.length());
+        String resultOfDivisionExpression = solveDivisionExpression(leftOperand, rightOperand);
+        return remainingLeftString + resultOfDivisionExpression + remainingRightString;
     }
 
 
