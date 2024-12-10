@@ -12,7 +12,7 @@ public class EvaluateExpression {
     public EvaluateExpression(String mathExpression) {
         this.mathExpression = mathExpression;
         this.indexOfAllBracketsInMathExpression = getBracketsInMathExpression();
-        this.solution = overseeEvaluation(this.mathExpression, this.indexOfAllBracketsInMathExpression);
+        this.solution = overseeEvaluation();
     }
 
 
@@ -97,17 +97,20 @@ public class EvaluateExpression {
     }
 
 
-    private String overseeEvaluation(String expression, List<Integer> indexOfBrackets) {
-        String temporalMathExpression = expression;
-        List<Integer> temporalIndexOfBrackets = new ArrayList<>(indexOfBrackets);
+    private String overseeEvaluation() {
+        String temporalMathExpression = this.mathExpression;
+        List<Integer> temporalIndexOfBrackets = new ArrayList<>(this.indexOfAllBracketsInMathExpression);
 
-        if (temporalIndexOfBrackets.isEmpty()) {
-            if (numberOfMathOperatorsInString(temporalMathExpression) > 0) {
-                if (temporalMathExpression.contains("**")) {
-                    temporalMathExpression
-                            = extractLeftAndRightOperandsAndSolveExponentialExpression(temporalMathExpression);
+        while (!(temporalIndexOfBrackets.isEmpty() && numberOfMathOperatorsInString(temporalMathExpression) == 0)) {
+            if (temporalIndexOfBrackets.isEmpty()) {
+                if (numberOfMathOperatorsInString(temporalMathExpression) > 0) {
+                    if (temporalMathExpression.contains("**")) {
+                        temporalMathExpression
+                                = extractLeftAndRightOperandsAndSolveExponentialExpression(temporalMathExpression);
+                    }
                 }
             }
+            temporalMathExpression = temporalMathExpression;
         }
         return temporalMathExpression;
     }
