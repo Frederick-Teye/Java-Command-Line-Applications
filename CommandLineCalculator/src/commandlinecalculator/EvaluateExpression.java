@@ -118,6 +118,10 @@ public class EvaluateExpression {
                         temporalMathExpression
                                 = extractLeftAndRightOperandsAndSolveDivisionExpression(temporalMathExpression);
                         continue;
+                    } else if (temporalMathExpression.contains("+")) {
+                        temporalMathExpression
+                                = extractLeftAndRightOperandsAndSolveAdditionExpression(temporalMathExpression);
+                        continue;
                     }
                 }
             }
