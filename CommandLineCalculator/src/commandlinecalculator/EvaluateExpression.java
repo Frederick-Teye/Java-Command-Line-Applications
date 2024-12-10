@@ -70,13 +70,14 @@ public class EvaluateExpression {
             if (mathExpression.charAt(i) == '*'
                     || mathExpression.charAt(i) == '/'
                     || mathExpression.charAt(i) == '+'
-                    || mathExpression.charAt(i) == '-'
-                    || i == mathExpression.length() - 1) {
+                    || mathExpression.charAt(i) == '-'){
                 endOfOperandOnRight = i;
                 break;
+            } else if (i == mathExpression.length() - 1) {
+                endOfOperandOnRight = mathExpression.length();
             }
         }
-        return ++endOfOperandOnRight;
+        return endOfOperandOnRight;
     }
 
 
