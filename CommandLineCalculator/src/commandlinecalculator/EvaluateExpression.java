@@ -138,8 +138,11 @@ public class EvaluateExpression {
                 = temporalMathExpression.substring(indexOfEndOfOperandOnTheLeft, indexOfPowerOperator);
         String rightOperand
                 = temporalMathExpression.substring(indexOfPowerOperator + 2, indexOfEndOfOperandOnTheRight);
-        temporalMathExpression = solveExponentialExpression(leftOperand, rightOperand);
-        return temporalMathExpression;
+        String remainingLeftString = temporalMathExpression.substring(0, indexOfEndOfOperandOnTheLeft);
+        String remainingRightString = temporalMathExpression.substring(indexOfEndOfOperandOnTheRight, 
+                temporalMathExpression.length());
+        String resultOfExponentialExpression = solveExponentialExpression(leftOperand, rightOperand);
+        return remainingLeftString + resultOfExponentialExpression + remainingRightString;
     }
 
 
