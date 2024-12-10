@@ -70,7 +70,7 @@ public class EvaluateExpression {
             if (mathExpression.charAt(i) == '*'
                     || mathExpression.charAt(i) == '/'
                     || mathExpression.charAt(i) == '+'
-                    || mathExpression.charAt(i) == '-'){
+                    || mathExpression.charAt(i) == '-') {
                 endOfOperandOnRight = i;
                 break;
             } else if (i == mathExpression.length() - 1) {
@@ -208,6 +208,24 @@ public class EvaluateExpression {
         double rightOperandCasted = Double.parseDouble(rightOperand);
         double result = leftOperandCasted / rightOperandCasted;
         return Double.toString(result);
+    }
+
+
+    private String extractLeftAndRightOperandsAndSolveAdditionExpression(String temporalMathExpression) {
+        int indexOfAdditionOperator = temporalMathExpression.indexOf("+");
+        int indexOfEndOfOperandOnTheRight
+                = indexOfEndOfOperandToTheRight(++indexOfAdditionOperator, temporalMathExpression);
+        int indexOfEndOfOperandOnTheLeft
+                = indexOfEndOfOperandToTheLeft(indexOfAdditionOperator - 2, temporalMathExpression);
+        String leftOperand
+                = temporalMathExpression.substring(indexOfEndOfOperandOnTheLeft, --indexOfAdditionOperator);
+        String rightOperand
+                = temporalMathExpression.substring(++indexOfAdditionOperator, indexOfEndOfOperandOnTheRight);
+        String remainingLeftString = temporalMathExpression.substring(0, indexOfEndOfOperandOnTheLeft);
+        String remainingRightString = temporalMathExpression.substring(indexOfEndOfOperandOnTheRight,
+                temporalMathExpression.length());
+        String resultOfAdditionExpression = solveAdditionExpression(leftOperand, rightOperand);
+        return remainingLeftString + resultOfAdditionExpression + remainingRightString;
     }
 
 
