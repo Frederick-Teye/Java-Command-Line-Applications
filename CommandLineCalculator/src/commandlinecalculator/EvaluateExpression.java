@@ -8,6 +8,8 @@ public class EvaluateExpression {
     private String mathExpression;
     private List<Integer> indexOfAllBracketsInMathExpression;
     private String solution;
+    // I have found a new algorithm that will help me perform this operations
+    // better. This algorithm is called Shunting Yard Algorithm
 
     public EvaluateExpression(String mathExpression) {
         this.mathExpression = mathExpression;
