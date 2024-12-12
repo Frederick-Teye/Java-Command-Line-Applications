@@ -10,7 +10,7 @@ public class CommandLineCalculator {
         System.out.print("Enter mathematical expression: ");
         String userInput = scanner.nextLine().trim();
 
-        String mathExpressionWithoutWhiteSpace = userInput.replace(" ", "");
+        String mathExpressionWithoutWhiteSpace = userInput.replace(" ", "").replace("^", "**");
         System.out.println(mathExpressionWithoutWhiteSpace);
 
         MathematicalExpression mathExpression = new MathematicalExpression(mathExpressionWithoutWhiteSpace);
