@@ -25,7 +25,7 @@ public class EvaluateExpression {
             char character = mathExpression[i];
 
             if ('-' == character && (i == 0 
-                    || "+-*/()".contains(Character.toString(mathExpression[i - 1])))) {
+                    || "+-*/^()".contains(Character.toString(mathExpression[i - 1])))) {
                 currentToken += character;
             } else if ("0123456789.".contains(Character.toString(character))) {
                 currentToken += character;
