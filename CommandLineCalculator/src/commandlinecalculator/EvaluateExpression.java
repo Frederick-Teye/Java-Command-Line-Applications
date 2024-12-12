@@ -2,6 +2,7 @@ package commandlinecalculator;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class EvaluateExpression {
 
@@ -43,6 +44,14 @@ public class EvaluateExpression {
 
 
     private String shuntingYard() {
+        Stack<Character> operators = new Stack<>();
+        List<String> output = new ArrayList<>();
+        
+        for (int i = 0; i < tokens.size(); i++) {
+            String get = tokens.get(i);
+            
+        }
+        
         return "";
     }
 
