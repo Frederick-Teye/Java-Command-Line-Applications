@@ -22,7 +22,7 @@ public class CommandLineCalculator {
 
             EvaluateExpression solution;
             solution = new EvaluateExpression(input);
-            System.out.println("solution of " + mathExpression + " = " + solution);
+            System.out.println("Solution of " + mathExpression + " = " + solution);
         }
 
     }
