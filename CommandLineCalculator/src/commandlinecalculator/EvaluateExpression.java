@@ -10,6 +10,7 @@ public class EvaluateExpression {
     private List<String> tokens;
     private String solution;
     private List<String> infixOutput;
+    private boolean isExpressionInvalid = false;
 
     public EvaluateExpression(String mathExpression) {
         this.mathExpression = mathExpression.replace("**", "^");
@@ -48,7 +49,6 @@ public class EvaluateExpression {
     private List<String> shuntingYard() {
         Stack<String> operators = new Stack<>();
         List<String> output = new ArrayList<>();
-        boolean isExpressionInvalid = false;
 
         for (int i = 0; i < tokens.size(); i++) {
             String token = tokens.get(i);
