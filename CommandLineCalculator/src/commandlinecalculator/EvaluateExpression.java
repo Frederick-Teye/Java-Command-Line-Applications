@@ -21,29 +21,36 @@ public class EvaluateExpression {
 
 
     private List<String> getTokens() {
-        List<String> tokens = new ArrayList<>();
-        String currentToken = "";
-        char[] mathExpression = this.mathExpression.toCharArray();
+    List<String> tokens = new ArrayList<>();
+    String currentToken = "";
+    char[] mathExpression = this.mathExpression.toCharArray();
 
-        for (int i = 0; i < mathExpression.length; i++) {
-            char character = mathExpression[i];
+    for (int i = 0; i < mathExpression.length; i++) {
+        char character = mathExpression[i];
 
-            if ('-' == character && (i == 0
-                    || "+-*/^()".contains(Character.toString(mathExpression[i - 1])))) {
-                currentToken += character;
-            } else if ("0123456789.".contains(Character.toString(character))) {
-                currentToken += character;
-            } else {
-                if (!currentToken.isEmpty()) {
-                    tokens.add(currentToken);
-                    currentToken = "";
-                }
-                tokens.add(Character.toString(character));
+        if ('-' == character && (i == 0 
+                || "+-*/^()".contains(Character.toString(mathExpression[i - 1])))) {
+            currentToken += character; 
+        } else if ("0123456789.".contains(Character.toString(character))) {
+            currentToken += character; 
+        } else {
+            if (!currentToken.isEmpty()) {
+                tokens.add(currentToken); 
+                currentToken = "";
+            }
+            if ("+-*/^()".contains(Character.toString(character))) {
+                tokens.add(Character.toString(character)); 
             }
         }
-
-        return tokens;
     }
+
+    // Add the last token if it exists
+    if (!currentToken.isEmpty()) {
+        tokens.add(currentToken);
+    }
+
+    return tokens;
+}
 
 
     private List<String> shuntingYard() {
