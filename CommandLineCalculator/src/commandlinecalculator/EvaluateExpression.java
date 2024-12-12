@@ -24,7 +24,7 @@ public class EvaluateExpression {
         for (int i = 0; i < mathExpression.length; i++) {
             char character = mathExpression[i];
 
-            if ('-' == character && (i == 0 
+            if ('-' == character && (i == 0
                     || "+-*/^()".contains(Character.toString(mathExpression[i - 1])))) {
                 currentToken += character;
             } else if ("0123456789.".contains(Character.toString(character))) {
@@ -40,10 +40,24 @@ public class EvaluateExpression {
 
         return tokens;
     }
-    
-    
-    private String overseeEvaluation(){
+
+
+    private String overseeEvaluation() {
         return "";
+    }
+
+
+    private int precedence(char operator) {
+        if (operator == '+' || operator == '-') {
+            return 1;
+        }
+        if (operator == '*' || operator == '/') {
+            return 2;
+        }
+        if (operator == '^') {
+            return 3;
+        }
+        return 0;
     }
 
 
