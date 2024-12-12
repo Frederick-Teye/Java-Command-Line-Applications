@@ -10,7 +10,7 @@ public class EvaluateExpression {
     private String solution;
 
     public EvaluateExpression(String mathExpression) {
-        this.mathExpression = mathExpression;
+        this.mathExpression = mathExpression.replace("**", "^");
         this.tokens = getTokens();
         this.solution = overseeEvaluation();
     }
