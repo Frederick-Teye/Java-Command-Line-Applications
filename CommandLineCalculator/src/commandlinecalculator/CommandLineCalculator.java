@@ -14,16 +14,14 @@ public class CommandLineCalculator {
         System.out.println(mathExpressionWithoutWhiteSpace);
 
         MathematicalExpression mathExpression = new MathematicalExpression(mathExpressionWithoutWhiteSpace);
-        // I don't need the MathematicalExpression class again, except its 
-        // isRawInputIllegal() method. 
 
         if (mathExpression.isRawInputIllegal() == true) {
             System.out.println("Invalid input, enter only numbers and math operators");
         } else {
-//            String input = mathExpression.toString();
+            String input = mathExpression.toString();
 
             EvaluateExpression solution;
-            solution = new EvaluateExpression(mathExpressionWithoutWhiteSpace);
+            solution = new EvaluateExpression(input);
             System.out.println("solution of " + mathExpression + " = " + solution);
         }
 
