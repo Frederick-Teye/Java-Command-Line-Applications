@@ -44,14 +44,46 @@ public class EvaluateExpression {
 
 
     private String shuntingYard() {
-        Stack<Character> operators = new Stack<>();
+        Stack<String> operators = new Stack<>();
         List<String> output = new ArrayList<>();
-        
+        boolean isExpressionInvalid = false;
+
         for (int i = 0; i < tokens.size(); i++) {
-            String get = tokens.get(i);
-            
+            String token = tokens.get(i);
+
+            if (isNumeric(token)) {
+                output.add(token);
+            } else if ("(".equals(token)) {
+                operators.add(token);
+            } else if (")".equals(token)) {
+                while (!operators.isEmpty() && !"(".equals(operators.peek())) {
+                    output.add(operators.pop());
+                }
+                if (operators.isEmpty()) {
+                    isExpressionInvalid = true; // Mismatched parentheses
+                } else {
+                    operators.pop(); // Pop the '('
+                }
+            } else { // Operator
+                while (!operators.isEmpty()
+                        && precedence(operators.peek())
+                        >= precedence(token)) {
+                    output.add(operators.pop());
+                }
+                operators.add(token);
+            }
         }
-        
+
+        while (!operators.isEmpty()) {
+            if ("(".equals(operators.peek())) {
+                isExpressionInvalid = true;
+            }
+
+            output.add(operators.pop());
+        }
+
+        List<String> watch = output;
+
         return "";
     }
 
