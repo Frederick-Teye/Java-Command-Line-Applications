@@ -9,11 +9,13 @@ public class EvaluateExpression {
     private String mathExpression;
     private List<String> tokens;
     private String solution;
+    private List<String> infixOutput;
 
     public EvaluateExpression(String mathExpression) {
         this.mathExpression = mathExpression.replace("**", "^");
         this.tokens = getTokens();
-        this.solution = shuntingYard();
+        this.infixOutput = shuntingYard();
+        this.solution = evaluateRPN();
     }
 
 
@@ -43,7 +45,7 @@ public class EvaluateExpression {
     }
 
 
-    private String shuntingYard() {
+    private List<String> shuntingYard() {
         Stack<String> operators = new Stack<>();
         List<String> output = new ArrayList<>();
         boolean isExpressionInvalid = false;
@@ -82,9 +84,7 @@ public class EvaluateExpression {
             output.add(operators.pop());
         }
 
-        List<String> watch = output;
-
-        return "";
+        return output;
     }
 
 
