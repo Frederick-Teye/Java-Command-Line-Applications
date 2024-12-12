@@ -112,6 +112,44 @@ public class EvaluateExpression {
     }
 
 
+    private String evaluateRPN() {
+        if (infixOutput.isEmpty()) {
+            return "0";
+        }
+
+        Stack<Double> stack = new Stack<>();
+
+        for (int i = 0; i < infixOutput.size(); i++) {
+            String get = infixOutput.get(i);
+
+            if (get.equals("+")) {
+                double b = stack.pop();
+                double a = stack.pop();
+                stack.add(b + a);
+            } else if (get.equals("*")) {
+                double b = stack.pop();
+                double a = stack.pop();
+                stack.push(b * a);
+            } else if (get.equals("-")) {
+                double b = stack.pop();
+                double a = stack.pop();
+                stack.push(a - b);
+            } else if (get.equals("/")) {
+                double b = stack.pop();
+                double a = stack.pop();
+                stack.push(a / b);
+            } else if (get.equals("^")) {
+                double b = stack.pop();
+                double a = stack.pop();
+                stack.push(Math.pow(a, b));
+            } else {
+                stack.push(Double.parseDouble(get));
+            }
+        }
+        return Double.toString(stack.pop());
+    }
+
+
     @Override
     public String toString() {
         return this.solution;
