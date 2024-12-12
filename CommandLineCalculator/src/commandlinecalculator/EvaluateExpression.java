@@ -56,14 +56,14 @@ public class EvaluateExpression {
     }
 
 
-    private int precedence(char operator) {
-        if (operator == '+' || operator == '-') {
+    private int precedence(String operator) {
+        if (operator == "+" || operator == "-") {
             return 1;
         }
-        if (operator == '*' || operator == '/') {
+        if (operator == "*" || operator == "/") {
             return 2;
         }
-        if (operator == '^') {
+        if (operator == "^") {
             return 3;
         }
         return 0;
