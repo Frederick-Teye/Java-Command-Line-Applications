@@ -12,7 +12,7 @@ public class EvaluateExpression {
     public EvaluateExpression(String mathExpression) {
         this.mathExpression = mathExpression.replace("**", "^");
         this.tokens = getTokens();
-        this.solution = overseeEvaluation();
+        this.solution = shuntingYard();
     }
 
 
@@ -42,7 +42,7 @@ public class EvaluateExpression {
     }
 
 
-    private String overseeEvaluation() {
+    private String shuntingYard() {
         return "";
     }
 
