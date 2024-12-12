@@ -13,7 +13,7 @@ public class EvaluateExpression {
     private boolean isExpressionInvalid = false;
 
     public EvaluateExpression(String mathExpression) {
-        this.mathExpression = mathExpression;
+        this.mathExpression = mathExpression.replace("**", "^");
         this.tokens = getTokens();
         this.infixOutput = shuntingYard();
         this.solution = evaluateRPN();
