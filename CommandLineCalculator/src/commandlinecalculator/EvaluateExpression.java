@@ -61,6 +61,16 @@ public class EvaluateExpression {
     }
 
 
+    private boolean isNumeric(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+
     @Override
     public String toString() {
         return this.solution;
