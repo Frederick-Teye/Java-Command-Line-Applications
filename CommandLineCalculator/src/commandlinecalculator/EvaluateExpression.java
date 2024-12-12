@@ -89,16 +89,17 @@ public class EvaluateExpression {
 
 
     private int precedence(String operator) {
+        int precedence = -1;
         if (operator == "+" || operator == "-") {
-            return 1;
+            precedence = 1;
         }
         if (operator == "*" || operator == "/") {
-            return 2;
+            precedence = 2;
         }
         if (operator == "^") {
-            return 3;
+            precedence = 3;
         }
-        return 0;
+        return precedence;
     }
 
 
