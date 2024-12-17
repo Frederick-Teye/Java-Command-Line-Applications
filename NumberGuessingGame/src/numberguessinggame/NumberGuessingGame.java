@@ -10,6 +10,7 @@ public class NumberGuessingGame {
                 + "generated in memory, guess what number it is: ");
         
         int userInput = scanner.nextInt();
+        int generatedRandomNumber = (int) (Math.random() * 100);
     }
 
 
