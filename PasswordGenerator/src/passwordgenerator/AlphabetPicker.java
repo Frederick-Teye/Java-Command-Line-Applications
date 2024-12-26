@@ -11,8 +11,7 @@ public class AlphabetPicker implements RandomCharacterPicker {
     @Override
     public Character getRandomCharacter() {
         int randomIndex = (int) (Math.random() * alphabet.length);
-        char randomAlphabet = alphabet[randomIndex];
-        return randomAlphabet;
+        return alphabet[randomIndex];
     }
 
 
