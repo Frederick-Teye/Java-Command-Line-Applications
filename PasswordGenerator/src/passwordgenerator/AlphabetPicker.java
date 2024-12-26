@@ -7,4 +7,13 @@ public class AlphabetPicker implements RandomCharacterPicker {
         't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D',
         'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O',
         'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+
+    @Override
+    public Character getRandomCharacter() {
+        int randomIndex = (int) (Math.random() * alphabet.length);
+        char randomAlphabet = alphabet[randomIndex];
+        return randomAlphabet;
+    }
+
+
 }
