@@ -6,6 +6,7 @@ class GeneratePassword {
     private int totalNumbers;
     private int totalCharacters;
     private int totalLetters;
+    private String password;
 
     public GeneratePassword(int passwordLength, int totalNumbers,
             int totalCharacters, int totalLetters) {
