@@ -12,4 +12,9 @@ public class PasswordGenerator {
     }
 
 
+    static void collectUserInput() {
+        
+    }
+
+
 }
