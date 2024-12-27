@@ -66,4 +66,10 @@ class GeneratePassword {
     }
 
 
+    @Override
+    public String toString() {
+        return password;
+    }
+
+
 }
