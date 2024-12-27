@@ -48,6 +48,7 @@ public class CollectInput {
         } while (true);
     }
 
+
     private void setNumberOfNumbers() {
         do {
             System.out.print("Password should contain how many numbers: ");
@@ -60,6 +61,11 @@ public class CollectInput {
                 System.out.println("Enter numbers only!!!\n");
             }
         } while (true);
+    }
+
+
+    private void setPasswordLength() {
+        passwordLenght = totalCharacters + totalNumbers + totalLetters;
     }
 
 
