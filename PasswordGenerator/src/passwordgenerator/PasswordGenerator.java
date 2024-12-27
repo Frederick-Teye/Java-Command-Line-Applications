@@ -8,7 +8,11 @@ public class PasswordGenerator {
     static int totalLetters;
 
     public static void main(String[] args) {
-        // TODO code application logic here
+        CollectInput userInput = new CollectInput();
+        passwordLenght = userInput.getPasswordLength();
+        totalNumbers = userInput.getTotalNumbers();
+        totalCharacters = userInput.getTotalCharacters();
+        totalLetters = userInput.getTotalLetters();
     }
 
 
