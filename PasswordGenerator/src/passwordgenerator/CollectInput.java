@@ -88,6 +88,11 @@ public class CollectInput {
     }
 
 
+    public int getTotalLetters() {
+        return totalLetters;
+    }
+
+
     public int getTotalCharacters() {
         return totalCharacters;
     }
