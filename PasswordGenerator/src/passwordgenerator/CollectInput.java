@@ -1,18 +1,22 @@
 package passwordgenerator;
 
+import java.util.Scanner;
+
 public class CollectInput {
 
     private int passwordLenght;
     private int totalNumbers;
     private int totalCharacters;
     private int totalLetters;
-    
+    private Scanner scanner = new Scanner(System.in);
+
     public CollectInput() {
         setNumberOfCharacters();
         setNumberOfLetters();
         setNumberOfNumbers();
         setPasswordLength();
     }
+
 
     private void setNumberOfCharacters() {
         do {
@@ -27,4 +31,6 @@ public class CollectInput {
             }
         } while (true);
     }
+
+
 }
