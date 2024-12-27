@@ -93,6 +93,11 @@ public class CollectInput {
     }
 
 
+    public int getTotalNumbers() {
+        return totalNumbers;
+    }
+
+
     public int getTotalCharacters() {
         return totalCharacters;
     }
