@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class CollectInput {
 
-    private int passwordLenght;
+    private int passwordLength;
     private int totalNumbers;
     private int totalCharacters;
     private int totalLetters;
@@ -65,7 +65,7 @@ public class CollectInput {
 
 
     private void setPasswordLength() {
-        passwordLenght = totalCharacters + totalNumbers + totalLetters;
+        passwordLength = totalCharacters + totalNumbers + totalLetters;
     }
 
 
@@ -83,8 +83,8 @@ public class CollectInput {
     }
 
 
-    public int getPasswordLenght() {
-        return passwordLenght;
+    public int getPasswordLength() {
+        return passwordLength;
     }
 
 
