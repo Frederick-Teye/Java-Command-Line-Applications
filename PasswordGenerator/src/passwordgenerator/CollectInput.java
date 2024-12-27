@@ -48,5 +48,19 @@ public class CollectInput {
         } while (true);
     }
 
+    private void setNumberOfNumbers() {
+        do {
+            System.out.print("Password should contain how many numbers: ");
+            String totalNumbersString = scanner.nextLine().trim();
+            if (isNumeric(totalNumbersString)) {
+                totalNumbers = Integer.parseInt(totalNumbersString);
+                System.out.println("");
+                break;
+            } else {
+                System.out.println("Enter numbers only!!!\n");
+            }
+        } while (true);
+    }
+
 
 }
