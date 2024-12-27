@@ -35,7 +35,7 @@ public class CollectInput {
 
     private void setNumberOfLetters() {
         do {
-            System.out.println("How many letters should password contain: ");
+            System.out.print("How many letters should password contain: ");
             String totalLettersString = scanner.nextLine().trim();
 
             if (isNumeric(totalLettersString)) {
