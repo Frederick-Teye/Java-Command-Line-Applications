@@ -20,7 +20,7 @@ public class PasswordGenerator {
         do {
             System.out.print("Password should contain how many numbers: ");
             String totalNumbersString = scanner.nextLine().trim();
-            if (isNumberic(totalNumbersString)) {
+            if (isNumeric(totalNumbersString)) {
                 totalNumbers = Integer.parseInt(totalNumbersString);
                 System.out.println("");
                 break;
@@ -33,7 +33,7 @@ public class PasswordGenerator {
             System.out.println("How many letters should password contain: ");
             String totalLettersString = scanner.nextLine().trim();
 
-            if (isNumberic(totalLettersString)) {
+            if (isNumeric(totalLettersString)) {
                 totalLetters = Integer.parseInt(totalLettersString);
                 System.out.println("");
                 break;
