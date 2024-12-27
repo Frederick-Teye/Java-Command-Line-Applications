@@ -83,4 +83,9 @@ public class CollectInput {
     }
 
 
+    public int getPasswordLenght() {
+        return passwordLenght;
+    }
+
+
 }
