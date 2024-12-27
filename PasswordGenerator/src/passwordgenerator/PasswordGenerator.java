@@ -13,6 +13,9 @@ public class PasswordGenerator {
         totalNumbers = userInput.getTotalNumbers();
         totalCharacters = userInput.getTotalCharacters();
         totalLetters = userInput.getTotalLetters();
+
+        GeneratePassword password = GeneratePassword(passwordLenght, totalNumbers,
+                totalCharacters, totalLetters);
     }
 
 
