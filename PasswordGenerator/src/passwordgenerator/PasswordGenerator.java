@@ -1,5 +1,7 @@
 package passwordgenerator;
 
+import java.util.Scanner;
+
 public class PasswordGenerator {
 
     static int passwordLenght;
@@ -13,7 +15,7 @@ public class PasswordGenerator {
 
 
     static void collectUserInput() {
-        
+        Scanner scanner = new Scanner(System.in);
     }
 
 
