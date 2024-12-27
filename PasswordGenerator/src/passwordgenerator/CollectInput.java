@@ -88,4 +88,9 @@ public class CollectInput {
     }
 
 
+    public int getTotalCharacters() {
+        return totalCharacters;
+    }
+
+
 }
