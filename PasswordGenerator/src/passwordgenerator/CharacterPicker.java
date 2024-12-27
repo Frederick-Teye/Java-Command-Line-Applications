@@ -7,7 +7,7 @@ public class CharacterPicker implements RandomCharacterPicker {
         '&', '*', '(', ')', '-', '_', '=', '+', '`', '~'};
 
     @Override
-    public Character getRandomCharacter() {
+    public char getRandomCharacter() {
         int randomIndex = (int) (Math.random() * characters.length);
         return characters[randomIndex];
     }
