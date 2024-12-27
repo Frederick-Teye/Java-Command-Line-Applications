@@ -58,18 +58,4 @@ public class PasswordGenerator {
     }
 
 
-    private static boolean isNumeric(String arg) {
-        if (arg == null) {
-            return false;
-        }
-
-        try {
-            Double.parseDouble(arg);
-        } catch (NumberFormatException e) {
-            return false;
-        }
-        return true;
-    }
-
-
 }

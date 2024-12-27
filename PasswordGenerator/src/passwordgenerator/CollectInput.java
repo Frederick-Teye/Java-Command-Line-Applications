@@ -69,4 +69,18 @@ public class CollectInput {
     }
 
 
+    private boolean isNumeric(String arg) {
+        if (arg == null) {
+            return false;
+        }
+
+        try {
+            Double.parseDouble(arg);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+        return true;
+    }
+
+
 }
