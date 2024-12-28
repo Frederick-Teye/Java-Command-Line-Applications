@@ -30,11 +30,11 @@ class GeneratePassword {
         int randomSelector;
 
         while (true) {
-            randomSelector = (int) (Math.random() * 3) + 1;
             if (currentPasswordSlot == passwordLength) {
                 break;
             }
-
+            
+            randomSelector = (int) (Math.random() * 3) + 1;
             if (randomSelector == 1) {
                 if (!(alphabetCounter >= totalLetters)) {
                     passwordArray[currentPasswordSlot] = alphabetPicker.getRandomCharacter();
