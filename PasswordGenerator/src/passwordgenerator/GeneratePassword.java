@@ -52,7 +52,7 @@ class GeneratePassword {
                     continue;
                 }
             } else if (randomSelector == 3) {
-                if (!(numberCounter >= totalCharacters)) {
+                if (!(numberCounter >= totalNumbers)) {
                     passwordArray[currentPasswordSlot] = numberPicker.getRandomCharacter();
                     currentPasswordSlot++;
                     numberCounter++;
