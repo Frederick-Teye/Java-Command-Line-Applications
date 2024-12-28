@@ -40,24 +40,18 @@ class GeneratePassword {
                     passwordArray[currentPasswordSlot] = alphabetPicker.getRandomCharacter();
                     currentPasswordSlot++;
                     alphabetCounter++;
-                } else {
-                    continue;
                 }
             } else if (randomSelector == 2) {
                 if (!(characterCounter >= totalCharacters)) {
                     passwordArray[currentPasswordSlot] = characterPicker.getRandomCharacter();
                     currentPasswordSlot++;
                     characterCounter++;
-                } else {
-                    continue;
                 }
             } else if (randomSelector == 3) {
                 if (!(numberCounter >= totalNumbers)) {
                     passwordArray[currentPasswordSlot] = numberPicker.getRandomCharacter();
                     currentPasswordSlot++;
                     numberCounter++;
-                } else {
-                    continue;
                 }
             }
         }
