@@ -10,5 +10,18 @@ public class RockPaperScissors {
 
     }
 
+    private static boolean isNumeric(String arg) {
+        if (arg == null) {
+            return false;
+        }
+        
+        try {
+            Double.parseDouble(arg);
+        } catch (Exception e) {
+            return false;
+        }
+        
+        return true;
+    }
 
 }
