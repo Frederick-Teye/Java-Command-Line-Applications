@@ -90,6 +90,10 @@ public class RockPaperScissors {
                 } else {
                     System.out.println("");
                 }
+            } else {
+                System.out.println("This is tie!!!");
+                System.out.println("You selected: " + userSelection);
+                System.out.println("Machine selected: " + randomSelection + "\n");
             }
         } while (true);
 
