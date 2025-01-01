@@ -120,10 +120,10 @@ public class RockPaperScissors {
             userInput = scanner.nextLine();
             System.out.println("");
             if (!isNumeric(userInput)) {
-                System.out.println("Enter only numbers!!!");
+                System.out.println("Enter only numbers!!!\n");
             } else if ((Integer.parseInt(userInput) > 3)
                     || (Integer.parseInt(userInput) < 1)) {
-                System.out.println("Enter only number from 1 to 3");
+                System.out.println("Enter only numbers from 1 to 3\n");
             } else {
                 break;
             }
