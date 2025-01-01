@@ -21,11 +21,11 @@ public class RockPaperScissors {
             if (userSelection.equals("rock") && randomSelection.equals("scissors")) {
                 System.out.println("You selected: " + userSelection);
                 System.out.println("Machine selected: " + randomSelection);
-                userPoints++;
+                ++userPoints;
                 System.out.println("You win!!!\n");
                 if (quitGame()) {
                     System.out.println("Your score is: " + userPoints);
-                    System.out.println("Machine score is " + machinePoints);
+                    System.out.println("Machine score is: " + machinePoints);
                     break;
                 } else {
                     System.out.println("");
@@ -33,11 +33,11 @@ public class RockPaperScissors {
             } else if (userSelection.equals("scissors") && randomSelection.equals("rock")) {
                 System.out.println("You selected: " + userSelection);
                 System.out.println("Machine selected: " + randomSelection);
-                machinePoints++;
+                ++machinePoints;
                 System.out.println("Machine win!!!\n");
                 if (quitGame()) {
                     System.out.println("Your score is: " + userPoints);
-                    System.out.println("Machine score is " + machinePoints);
+                    System.out.println("Machine score is: " + machinePoints);
                     break;
                 } else {
                     System.out.println("");
@@ -45,11 +45,11 @@ public class RockPaperScissors {
             } else if (userSelection.equals("scissors") && randomSelection.equals("paper")) {
                 System.out.println("You selected: " + userSelection);
                 System.out.println("Machine selected: " + randomSelection);
-                userPoints++;
+                ++userPoints;
                 System.out.println("You win!!!\n");
                 if (quitGame()) {
                     System.out.println("Your score is: " + userPoints);
-                    System.out.println("Machine score is " + machinePoints);
+                    System.out.println("Machine score is: " + machinePoints);
                     break;
                 } else {
                     System.out.println("");
@@ -57,11 +57,11 @@ public class RockPaperScissors {
             } else if (userSelection.equals("paper") && randomSelection.equals("scissors")) {
                 System.out.println("You selected: " + userSelection);
                 System.out.println("Machine selected: " + randomSelection);
-                machinePoints++;
+                ++machinePoints;
                 System.out.println("Machine win!!!\n");
                 if (quitGame()) {
                     System.out.println("Your score is: " + userPoints);
-                    System.out.println("Machine score is " + machinePoints);
+                    System.out.println("Machine score is: " + machinePoints);
                     break;
                 } else {
                     System.out.println("");
@@ -69,11 +69,11 @@ public class RockPaperScissors {
             } else if (userSelection.equals("paper") && randomSelection.equals("rock")) {
                 System.out.println("You selected: " + userSelection);
                 System.out.println("Machine selected: " + randomSelection);
-                userInput++;
+                ++userPoints;
                 System.out.println("You win!!!\n");
                 if (quitGame()) {
                     System.out.println("Your score is: " + userPoints);
-                    System.out.println("Machine score is " + machinePoints);
+                    System.out.println("Machine score is: " + machinePoints);
                     break;
                 } else {
                     System.out.println("");
@@ -81,17 +81,17 @@ public class RockPaperScissors {
             } else if (userSelection.equals("rock") && randomSelection.equals("paper")) {
                 System.out.println("You selected: " + userSelection);
                 System.out.println("Machine selected: " + randomSelection);
-                machinePoints++;
+                ++machinePoints;
                 System.out.println("Machine win!!!\n");
                 if (quitGame()) {
                     System.out.println("Your score is: " + userPoints);
-                    System.out.println("Machine score is " + machinePoints);
+                    System.out.println("Machine score is: " + machinePoints);
                     break;
                 } else {
                     System.out.println("");
                 }
             } else {
-                System.out.println("This is tie!!!");
+                System.out.println("This is a tie!!!");
                 System.out.println("You selected: " + userSelection);
                 System.out.println("Machine selected: " + randomSelection + "\n");
             }
