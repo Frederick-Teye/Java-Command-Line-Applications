@@ -87,4 +87,14 @@ public class RockPaperScissors {
     }
 
 
+    private static boolean quitGame() {
+        System.out.print("Will you like to continue(Y/N): ");
+        String userInput = scanner.nextLine().toLowerCase();
+        if (userInput.equals("y") || userInput.equals("yes")) {
+            return true;
+        }
+        return false;
+    }
+
+
 }
