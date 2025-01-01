@@ -8,6 +8,48 @@ public class RockPaperScissors {
 
     public static void main(String[] args) {
         System.out.println("Welcome to Rock Paper Scissors Game");
+        byte machinePoints = 0;
+        byte userPoints = 0;
+
+        String[] gameValues = {"rock", "paper", "scissors"};
+
+        do {
+            int userInput = getUserInput();
+            String userSelection = gameValues[--userInput];
+            String randomSelection = gameValues[(int) (Math.random() * gameValues.length)];
+
+            if (userSelection.equals("rock") && randomSelection.equals("scissors")) {
+                System.out.println("Your input: " + userSelection);
+                System.out.println("Machine selection: " + randomSelection);
+                userPoints++;
+                System.out.println("You win!!!");
+            } else if (userSelection.equals("scissors") && randomSelection.equals("rock")) {
+                System.out.println("Your input: " + userSelection);
+                System.out.println("Machine selection: " + randomSelection);
+                machinePoints++;
+                System.out.println("Machine win!!!");
+            } else if (userSelection.equals("scissors") && randomSelection.equals("paper")) {
+                System.out.println("Your input: " + userSelection);
+                System.out.println("Machine selection: " + randomSelection);
+                userPoints++;
+                System.out.println("You win!!!");
+            } else if (userSelection.equals("paper") && randomSelection.equals("scissors")) {
+                System.out.println("Your input: " + userSelection);
+                System.out.println("Machine selection: " + randomSelection);
+                machinePoints++;
+                System.out.println("Machine win!!!");
+            } else if (userSelection.equals("paper") && randomSelection.equals("rock")) {
+                System.out.println("Your input: " + userSelection);
+                System.out.println("Machine selection: " + randomSelection);
+                userInput++;
+                System.out.println("You win!!!");
+            } else if (userSelection.equals("rock") && randomSelection.equals("paper")) {
+                System.out.println("Your input: " + userSelection);
+                System.out.println("Machine selection: " + randomSelection);
+                machinePoints++;
+                System.out.println("Machine win!!!");
+            }
+        } while (true);
 
     }
 
