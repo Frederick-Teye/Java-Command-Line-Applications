@@ -107,7 +107,7 @@ public class RockPaperScissors {
 
         try {
             Double.parseDouble(arg);
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             return false;
         }
 
