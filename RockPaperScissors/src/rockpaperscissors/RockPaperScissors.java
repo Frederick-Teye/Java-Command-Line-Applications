@@ -27,4 +27,22 @@ public class RockPaperScissors {
     }
 
 
+    private static int getUserInput() {
+        String userInput;
+        while (true) {
+            System.out.print("Enter   1 to select Rock, "
+                    + "\n\t2 to select Paper, "
+                    + "\n\t3 to select Scissors: ");
+            userInput = scanner.nextLine();
+            System.out.println("");
+            if (!isNumeric(userInput)) {
+                System.out.println("Enter only numbers!!!");
+            } else {
+                break;
+            }
+        }
+        return Integer.parseInt(userInput);
+    }
+
+
 }
