@@ -22,32 +22,74 @@ public class RockPaperScissors {
                 System.out.println("Your input: " + userSelection);
                 System.out.println("Machine selection: " + randomSelection);
                 userPoints++;
-                System.out.println("You win!!!");
+                System.out.println("You win!!!\n");
+                if (quitGame()) {
+                    System.out.println("Your score is: " + userPoints);
+                    System.out.println("Machine score is " + machinePoints);
+                    break;
+                } else {
+                    System.out.println("");
+                }
             } else if (userSelection.equals("scissors") && randomSelection.equals("rock")) {
                 System.out.println("Your input: " + userSelection);
                 System.out.println("Machine selection: " + randomSelection);
                 machinePoints++;
-                System.out.println("Machine win!!!");
+                System.out.println("Machine win!!!\n");
+                if (quitGame()) {
+                    System.out.println("Your score is: " + userPoints);
+                    System.out.println("Machine score is " + machinePoints);
+                    break;
+                } else {
+                    System.out.println("");
+                }
             } else if (userSelection.equals("scissors") && randomSelection.equals("paper")) {
                 System.out.println("Your input: " + userSelection);
                 System.out.println("Machine selection: " + randomSelection);
                 userPoints++;
-                System.out.println("You win!!!");
+                System.out.println("You win!!!\n");
+                if (quitGame()) {
+                    System.out.println("Your score is: " + userPoints);
+                    System.out.println("Machine score is " + machinePoints);
+                    break;
+                } else {
+                    System.out.println("");
+                }
             } else if (userSelection.equals("paper") && randomSelection.equals("scissors")) {
                 System.out.println("Your input: " + userSelection);
                 System.out.println("Machine selection: " + randomSelection);
                 machinePoints++;
-                System.out.println("Machine win!!!");
+                System.out.println("Machine win!!!\n");
+                if (quitGame()) {
+                    System.out.println("Your score is: " + userPoints);
+                    System.out.println("Machine score is " + machinePoints);
+                    break;
+                } else {
+                    System.out.println("");
+                }
             } else if (userSelection.equals("paper") && randomSelection.equals("rock")) {
                 System.out.println("Your input: " + userSelection);
                 System.out.println("Machine selection: " + randomSelection);
                 userInput++;
-                System.out.println("You win!!!");
+                System.out.println("You win!!!\n");
+                if (quitGame()) {
+                    System.out.println("Your score is: " + userPoints);
+                    System.out.println("Machine score is " + machinePoints);
+                    break;
+                } else {
+                    System.out.println("");
+                }
             } else if (userSelection.equals("rock") && randomSelection.equals("paper")) {
                 System.out.println("Your input: " + userSelection);
                 System.out.println("Machine selection: " + randomSelection);
                 machinePoints++;
-                System.out.println("Machine win!!!");
+                System.out.println("Machine win!!!\n");
+                if (quitGame()) {
+                    System.out.println("Your score is: " + userPoints);
+                    System.out.println("Machine score is " + machinePoints);
+                    break;
+                } else {
+                    System.out.println("");
+                }
             }
         } while (true);
 
