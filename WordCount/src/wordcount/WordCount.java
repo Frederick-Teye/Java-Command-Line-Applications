@@ -1,9 +1,11 @@
 package wordcount;
 
+import java.nio.file.Path;
+
 public class WordCount {
 
     public static void main(String[] args) {
-        // TODO code application logic here
+        Path path = Path.of("test.txt");
     }
 
 
