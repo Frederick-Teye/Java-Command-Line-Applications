@@ -1,5 +1,6 @@
 package wordcount;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
@@ -12,7 +13,7 @@ public class WordCount {
         
         try {
             lines = Files.readAllLines(path);
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
