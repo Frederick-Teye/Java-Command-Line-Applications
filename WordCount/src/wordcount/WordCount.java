@@ -13,6 +13,7 @@ public class WordCount {
         
         try {
             lines = Files.readAllLines(path);
+            String[] linesArray = lines.toArray(new String[] {});
         } catch (IOException e) {
             e.printStackTrace();
         }
